@@ -1,0 +1,105 @@
+%!TEX encoding = UTF-8 Unicode
+%!TEX program = xelatex
+
+\documentclass[doctor]{hnuthesis}
+\usepackage{subfigure}
+\usepackage{amsmath, unicode-math}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}%
+
+%\newCJKfontfamily{\simsun}[AutoFakeBold = {3.17}]{SimSun} %%中文加粗
+
+\usepackage{algpseudocode}
+\usepackage{float}
+\usepackage{makecell}
+
+\usepackage{tikz}
+\usepackage{etoolbox}
+\newcommand{\circled}[2][]{\tikz[baseline=(char.base)]
+    {\node[shape = circle, draw, inner sep = 1pt]
+    (char) {\phantom{\ifblank{#1}{#2}{#1}}};%
+    \node at (char.center) {\makebox[0pt][c]{#2}};}}
+\robustify{\circled} 
+
+\usepackage{listings}
+
+%\usepackage{setspace}
+%\linespread{1.5}
+
+
+
+% 学校代码
+\hnucode{10532}
+% 学校名称
+\hnuname{湖南大学}
+\enhnuname{Hunan University}
+% 中图分类号
+\clc{TP391}         
+% 密级       
+\secrettext{普通}
+
+% 标题
+\title{针对国产ARM架构CPU的深度学习函数库的设计与优化}
+\entitle{Design and optimization of deep learning function library for domestic ARM architecture CPU}
+% 作者
+\author{谭言西}
+\enauthor{Yanxi Tan}
+% 学号
+\authorid{S2010W0916}      
+% 学院
+\college{信息科学与工程学院}
+% 专业
+\major{计算机技术} 
+\enmajor{Computer Technology}
+%学士学位获得学校，年份
+\enbachelor{B.E.~(NanChang University)2018}
+% \enmaster{M.S.~(Hunan University)2020}
+\endoctor{Master of engineering}
+% 研究方向
+\workon{高性能计算、体系结构}
+% 导师
+\supervisor{全哲\ 教授}
+\ensupervisor{Professor Zhe Quan}
+% 论文提交、答辩日期
+\submitdate{二〇二三年x月xx日}
+\defensedate{二〇二三年x月xx日}
+\endate{June, 2023}
+% 答辩委员会主席
+\chair{待定}
+
+
+
+\usepackage[export]{adjustbox} \begin{document}
+% 封面、原创性声明
+\maketitle
+
+% 摘要
+\input{chapters-main/abstract}
+% 目录
+\tableofcontents
+% 插图附表索引
+\listoffigures
+\listoftables
+
+% 正文章节
+\mainmatter
+% \input{chapters-main/test.tex}
+\input{chapters-main/ch1}
+\input{chapters-main/ch2}
+\input{chapters-main/ch3}
+\input{chapters-main/ch4}
+\input{chapters-main/ch5}
+% \input{chapters-main/samples}
+
+\input{chapters-main/summary}
+\bibliography{references}
+
+\appendix
+\input{chapters-main/publications}
+\input{chapters-main/projects}
+
+\backmatter
+\input{chapters-main/acknowledgements}
+
+\end{document}
+
